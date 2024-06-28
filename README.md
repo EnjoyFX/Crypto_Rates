@@ -19,7 +19,7 @@ RPI_SITE_CONFIG=/etc/nginx/sites-available/crypto_rates
 ```
 _Note: Script for Raspberry Pi (`deploy_rpi.sh`) will be called automatically during this process._
 
-As a result you can see something like this (Note: RPI password will be asked during this process):
+As a result you can see something like this (Note: If you have no keys - RPI password will be asked during this process):
 ```
 ----- RPI deployment for my crypto_rates site -----
 ✓ Load variables from .env file
@@ -73,3 +73,18 @@ http://192.168.0.60/
   ``` 
 
 And check the result! :-) 
+
+
+## Additional info - how to do automated deployment without RPI password
+* Generate key pair on your local Mac/Linux system:
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+* Use this command for copy public key to Raspberry Pi:
+```
+ssh-copy-id ${RPI_USER}@${RPI_HOST}
+```
+* Check your connection - now no password is requered, and same script will work fine (and faster) but w/o password requests:
+```
+ssh ${RPI_USER}@${RPI_HOST}
+```

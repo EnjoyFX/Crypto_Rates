@@ -23,19 +23,21 @@
     <div class="container d-flex flex-column align-items-center">
         <h2 class="mt-4">Crypto Exchange Rates</h2>
         <form id="rateForm" class="form-inline mb-4 justify-content-center">
-            <div class="form-group mr-2 wide-input">
+            <div class="form-group mr-2 wide-input d-flex align-items-center">
                 <label for="symbols" class="mr-2">Symbols:</label>
                 <input type="text" id="symbols" name="symbols" class="form-control" placeholder="BTCUSDT,ETHUSDT"
                        data-toggle="tooltip" title="Comma separated pairs" style="text-transform: uppercase;" 
                        oninput="this.value = this.value.toUpperCase();">
             </div>
-            <div class="form-group mr-2">
+            <div class="form-group mr-2 d-flex align-items-center">
                 <label for="periods" class="mr-2">Periods:</label>
                 <input type="number" id="periods" name="periods" class="form-control" min="1" max="500" value="6"
-                 data-toggle="tooltip" title="How many periods to the past needed (each period - 10 mins)">
+                       data-toggle="tooltip" title="How many periods to the past needed (each period - 10 mins)">
             </div>
-            <button type="submit" class="btn btn-primary">Get Rates</button>
-        </form>
+            <div class="form-group d-flex align-items-center">
+                <button type="submit" class="btn btn-primary">Get Rates</button>
+            </div>
+        </form>        
         <div id="chartContainer" class="d-flex justify-content-center">
             <canvas id="rateChart"></canvas>
         </div>

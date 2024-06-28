@@ -14,20 +14,25 @@
             width: 100%;
             height: 600px;
         }
+        .wide-input .form-control {
+            width: 400px; /* або інше потрібне значення */
+        }
     </style>
 </head>
 <body>
     <div class="container d-flex flex-column align-items-center">
         <h2 class="mt-4">Crypto Exchange Rates</h2>
         <form id="rateForm" class="form-inline mb-4 justify-content-center">
-            <div class="form-group mr-2">
+            <div class="form-group mr-2 wide-input">
                 <label for="symbols" class="mr-2">Symbols:</label>
                 <input type="text" id="symbols" name="symbols" class="form-control" placeholder="BTCUSDT,ETHUSDT"
-                data-toggle="tooltip" title="Comma separated pairs">
+                       data-toggle="tooltip" title="Comma separated pairs" style="text-transform: uppercase;" 
+                       oninput="this.value = this.value.toUpperCase();">
             </div>
             <div class="form-group mr-2">
                 <label for="periods" class="mr-2">Periods:</label>
-                <input type="number" id="periods" name="periods" class="form-control" min="1" max="100">
+                <input type="number" id="periods" name="periods" class="form-control" min="1" max="500" value="6"
+                 data-toggle="tooltip" title="How many periods to the past needed (each period - 10 mins)">
             </div>
             <button type="submit" class="btn btn-primary">Get Rates</button>
         </form>

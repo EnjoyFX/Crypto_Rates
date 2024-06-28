@@ -1,8 +1,8 @@
 # Crypto Rates
-### Site with automated deployment from Mac/Linux to for Raspberry Pi
+### Site with automated deployment from Mac/Linux to Raspberry Pi
 
 ## Requirements:
-* This is only site html+js with automated deployment
+* This is only site (html+js) with automated deployment scripts
 * additionally needed API for receiving price data (https://github.com/EnjoyFX/crypto_monitor)
 ## How to use
 * Create .env file with variables and place it to project dir.

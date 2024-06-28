@@ -1,4 +1,7 @@
-const BASE_URL = '{{RPI_URL_PLACEHOLDER}}';
+let BASE_URL = '{{RPI_URL_PLACEHOLDER}}'; // this placeholder will be automatically updated during deployment
+if (BASE_URL.includes('RPI_URL_PLACEHOLDER')) {
+    BASE_URL = '192.168.0.60'; // default server IP in case we starting from local
+}
 let chart = null;
 
 const colors = [

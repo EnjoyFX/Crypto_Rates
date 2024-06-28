@@ -21,8 +21,9 @@
         <h2 class="mt-4">Crypto Exchange Rates</h2>
         <form id="rateForm" class="form-inline mb-4 justify-content-center">
             <div class="form-group mr-2">
-                <label for="symbols" class="mr-2">Symbols (comma separated):</label>
-                <input type="text" id="symbols" name="symbols" class="form-control" placeholder="BTCUSDT,ETHUSDT">
+                <label for="symbols" class="mr-2">Symbols:</label>
+                <input type="text" id="symbols" name="symbols" class="form-control" placeholder="BTCUSDT,ETHUSDT"
+                data-toggle="tooltip" title="Comma separated pairs">
             </div>
             <div class="form-group mr-2">
                 <label for="periods" class="mr-2">Periods:</label>
@@ -36,6 +37,11 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip(); 
+        });
+    </script>
 </body>
 </html>

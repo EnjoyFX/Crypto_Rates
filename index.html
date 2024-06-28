@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Exchange Rates</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="script.js" defer></script>
+    <style>
+        #chartContainer {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center">
+        <h2 class="mt-4">Crypto Exchange Rates</h2>
+        <form id="rateForm" class="form-inline mb-4 justify-content-center">
+            <div class="form-group mr-2">
+                <label for="symbols" class="mr-2">Symbols (comma separated):</label>
+                <input type="text" id="symbols" name="symbols" class="form-control" placeholder="BTCUSDT,ETHUSDT">
+            </div>
+            <div class="form-group mr-2">
+                <label for="periods" class="mr-2">Periods:</label>
+                <input type="number" id="periods" name="periods" class="form-control" min="1" max="100">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Rates</button>
+        </form>
+        <div id="chartContainer" class="d-flex justify-content-center">
+            <canvas id="rateChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
